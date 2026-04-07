@@ -8,8 +8,8 @@ import SddmComponents 2.0
 
 Rectangle {
     id: root
-    width: Screen.width
-    height: Screen.height
+    width: 2880
+    height: 1800
     color: "black"
 
     // Screen shake
