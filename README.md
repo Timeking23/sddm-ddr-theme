@@ -2,7 +2,7 @@
 
 A DDR / rhythm-game style SDDM login screen built with Qt6 QML.
 
-![demo](demo.gif)
+https://github.com/Timeking23/sddm-ddr-theme/releases/download/v1.0/demo.mp4
 
 When you click **Sign in**, a DDR minigame starts. Hit the arrows as they reach the targets to authenticate — then your grade is revealed and you're logged in. A **skip** button is always available if you just want to log in instantly.
 
