@@ -3,10 +3,13 @@ import QtQuick.Controls 2.15
 import QtQuick.Controls 2.15 as QQC2
 import QtMultimedia 6.0
 import QtQuick.Effects
+import QtQuick.Window 2.15
 import SddmComponents 2.0
 
 Rectangle {
     id: root
+    width: Screen.width
+    height: Screen.height
     color: "black"
 
     // Screen shake
@@ -246,6 +249,7 @@ Rectangle {
             QQC2.ComboBox {
                 id: sessionCombo; width: parent.width; height: 32
                 model: SessionModel; textRole: "name"
+                currentIndex: 0
                 background: Rectangle { color: "#15ffffff"; radius: 8; border.color: "#25ffffff"; border.width: 1 }
                 contentItem: Text { leftPadding: 10; text: sessionCombo.displayText; color: "#aaaacc"; font.pixelSize: 12; verticalAlignment: Text.AlignVCenter }
                 indicator: Text { x: sessionCombo.width - width - 8; anchors.verticalCenter: parent.verticalCenter; text: "⌄"; color: "#aaaacc"; font.pixelSize: 14 }
@@ -624,7 +628,7 @@ Text {
                 onClicked: {
                     ddrCleanup()
                     ddrActive = false
-                    sddm.login(userField.text, passField.text, sessionCombo.currentIndex)
+                    sddm.login(userField.text, passField.text, Math.max(0, sessionCombo.currentIndex))
                 }
             }
         }
@@ -782,7 +786,7 @@ Text {
             gradeOverlay.visible = false
             ddrActive = false
             ddrCleanup()
-            sddm.login(userField.text, passField.text, sessionCombo.currentIndex)
+            sddm.login(userField.text, passField.text, Math.max(0, sessionCombo.currentIndex))
         }
     }
 
