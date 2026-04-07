@@ -33,7 +33,7 @@ When you click **Sign in**, a DDR minigame starts. Hit the arrows as they reach 
 <a id="features"></a>
 <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=ff79c6&vCenter=true&width=435&height=25&lines=FEATURES" width="435"/>
 
----
+---   used claude to write read me 
 
 - Animated video background (bring your own `.mp4`)
 - DDR minigame with a Touhou-inspired arrow pattern (~170 BPM)
