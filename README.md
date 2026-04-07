@@ -1,14 +1,39 @@
-# sddm-ddr-theme
+<div align="center">
 
-A DDR / rhythm-game style SDDM login screen built with Qt6 QML.
+<img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=40&pause=1000&color=ff79c6&center=true&vCenter=true&width=600&height=60&lines=sddm-ddr-theme" />
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=16&pause=1000&color=8be9fd&center=true&vCenter=true&width=600&height=30&lines=DDR+rhythm+game+SDDM+login+screen+%7C+Qt6+QML" />
+
+<br>
+
+![](https://img.shields.io/badge/SDDM-Qt6-ff79c6?style=for-the-badge&logo=qt&logoColor=white)
+![](https://img.shields.io/badge/Arch-Linux-8be9fd?style=for-the-badge&logo=archlinux&logoColor=white)
+![](https://img.shields.io/badge/Wayland-50fa7b?style=for-the-badge&logo=wayland&logoColor=black)
+![](https://img.shields.io/badge/license-MIT-ff5555?style=for-the-badge)
+
+<br>
+
+<a href="#installation"><kbd> <br> Installation <br> </kbd></a>&ensp;
+<a href="#how-to-play"><kbd> <br> How to Play <br> </kbd></a>&ensp;
+<a href="#customization"><kbd> <br> Customization <br> </kbd></a>&ensp;
+<a href="#requirements"><kbd> <br> Requirements <br> </kbd></a>
+
+</div>
+
+<br>
 
 https://github.com/Timeking23/sddm-ddr-theme/releases/download/v1.0/demo.mp4
 
-When you click **Sign in**, a DDR minigame starts. Hit the arrows as they reach the targets to authenticate — then your grade is revealed and you're logged in. A **skip** button is always available if you just want to log in instantly.
+<br>
+
+When you click **Sign in**, a DDR minigame starts. Hit the arrows as they reach the targets to authenticate — your grade is revealed and you're logged in. A **skip** button is always available if you just want to log in instantly.
 
 ---
 
-## Features
+<a id="features"></a>
+<img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=ff79c6&vCenter=true&width=435&height=25&lines=FEATURES" width="435"/>
+
+---
 
 - Animated video background (bring your own `.mp4`)
 - DDR minigame with a Touhou-inspired arrow pattern (~170 BPM)
@@ -27,12 +52,19 @@ When you click **Sign in**, a DDR minigame starts. Hit the arrows as they reach 
 - Reboot / power off buttons
 - Skip button for instant login
 
+<div align="right">
+  <a href="#top"><kbd> <br> 🡅 <br> </kbd></a>
+</div>
+
 ---
 
-## Requirements
+<a id="requirements"></a>
+<img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=ff79c6&vCenter=true&width=435&height=25&lines=REQUIREMENTS" width="435"/>
 
-- **SDDM** with Qt6 support (`sddm-git` or SDDM ≥ 0.21 on most distros)
-- Qt 6 with `QtMultimedia` and `QtQuick.Effects` (usually pulled in by `qt6-multimedia`)
+---
+
+- **SDDM** with Qt6 support (`sddm-git` or SDDM ≥ 0.21)
+- Qt6 with `QtMultimedia` and `QtQuick.Effects`
 - A video file for the background (`.mp4`, `.webm`, etc.)
 
 On Arch / Manjaro:
@@ -40,113 +72,137 @@ On Arch / Manjaro:
 sudo pacman -S sddm qt6-multimedia qt6-multimedia-ffmpeg
 ```
 
+<div align="right">
+  <a href="#top"><kbd> <br> 🡅 <br> </kbd></a>
+</div>
+
 ---
 
-## Installation
+<a id="installation"></a>
+<img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=ff79c6&vCenter=true&width=435&height=25&lines=INSTALLATION" width="435"/>
 
-### 1. Clone the repo
+---
 
+**1. Clone the repo**
 ```bash
 git clone https://github.com/Timeking23/sddm-ddr-theme.git
 ```
 
-### 2. Copy the theme
-
+**2. Copy the theme**
 ```bash
 sudo cp -r sddm-ddr-theme /usr/share/sddm/themes/
 ```
 
-### 3. Set your video background
+**3. Set your video background**
 
-Open `/usr/share/sddm/themes/sddm-ddr-theme/Main.qml` and find this line near the top of the file:
-
+Open `/usr/share/sddm/themes/sddm-ddr-theme/Main.qml` and find:
 ```qml
 source: "/path/to/your/background.mp4"   // ← change this to your video file
 ```
-
-Replace the path with the absolute path to your video file, e.g.:
-
+Replace it with the absolute path to your video, e.g.:
 ```qml
 source: "/home/yourname/Videos/background.mp4"
 ```
+> The video plays silently on loop. Any `.mp4` or `.webm` works.
+> Free anime wallpaper videos: [moewalls.com](https://moewalls.com)
 
-> The video plays silently and loops. Any `.mp4` or `.webm` works.
-> Good source for free anime wallpaper videos: [moewalls.com](https://moewalls.com)
-
-### 4. (Optional) Pre-fill your username
+**4. (Optional) Pre-fill your username**
 
 In the same file, find:
-
 ```qml
 id: userField; text: ""   // pre-fill with your username if desired
 ```
-
 Change `""` to your username:
-
 ```qml
 id: userField; text: "yourname"
 ```
 
-### 5. Apply the theme
+**5. Apply the theme**
 
 Create or edit `/etc/sddm.conf.d/theme.conf`:
-
 ```ini
 [Theme]
 Current=sddm-ddr-theme
 ```
 
-Or use your distro's settings app if it has an SDDM theme picker.
-
-### 6. Test without rebooting
-
+**6. Test without rebooting**
 ```bash
 sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/sddm-ddr-theme
 ```
 
+<div align="right">
+  <a href="#top"><kbd> <br> 🡅 <br> </kbd></a>
+</div>
+
 ---
 
-## How to play
+<a id="how-to-play"></a>
+<img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=ff79c6&vCenter=true&width=435&height=25&lines=HOW+TO+PLAY" width="435"/>
+
+---
+
+<div align="center">
 
 | Key | Direction |
-|-----|-----------|
+|:---:|:---------:|
 | `←` or `D` | Left |
 | `↓` or `F` | Down |
 | `↑` or `J` | Up |
 | `→` or `K` | Right |
 
-Arrows fall from top to bottom. Hit them as they cross the glowing rainbow bar at the bottom.
+</div>
+
+Arrows fall from top to bottom. Hit them as they cross the glowing rainbow bar.
+
+<div align="center">
 
 | Timing | Window |
-|--------|--------|
-| PERFECT | within ~28px of center |
-| GOOD | within ~52px |
-| LATE | within ~72px |
-| MISS | outside zone |
+|:------:|:------:|
+| **PERFECT** | within ~28px of center |
+| **GOOD** | within ~52px |
+| **LATE** | within ~72px |
+| **MISS** | outside zone |
 
-### Grades
+</div>
+
+**Grades**
+
+<div align="center">
 
 | Grade | Condition |
-|-------|-----------|
-| S | 100% accuracy, zero misses |
-| A | ≥ 90% |
-| B | ≥ 75% |
-| C | ≥ 60% |
-| D | below 60% |
+|:-----:|:---------:|
+| **S** | 100% accuracy, zero misses |
+| **A** | ≥ 90% |
+| **B** | ≥ 75% |
+| **C** | ≥ 60% |
+| **D** | below 60% |
+
+</div>
 
 After the pattern finishes your grade is shown for ~2 seconds, then you're logged in regardless of score. Click **skip** at any time to bypass the game entirely.
 
+<div align="right">
+  <a href="#top"><kbd> <br> 🡅 <br> </kbd></a>
+</div>
+
 ---
 
-## Customization tips
+<a id="customization"></a>
+<img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=ff79c6&vCenter=true&width=435&height=25&lines=CUSTOMIZATION" width="435"/>
+
+---
 
 - **Arrow pattern** — edit `arrowPattern` in `Main.qml`. Each entry is `{dir: 0-3, delay: ms}` where `0=Left 1=Down 2=Up 3=Right` and `delay` is time after the previous arrow.
-- **Arrow speed** — change `arrowDuration: 1500` (milliseconds for an arrow to cross the screen). Higher = slower.
-- **BPM** — adjust the delay values in `arrowPattern`. At 170 BPM: quarter=353ms, 8th=176ms, 16th=88ms.
-- **Colors** — `arrowColors` holds the four lane colors in Dracula palette by default.
+- **Arrow speed** — change `arrowDuration: 1500` (ms for an arrow to travel the full screen). Higher = slower.
+- **BPM** — adjust delays in `arrowPattern`. At 170 BPM: quarter=353ms, 8th=176ms, 16th=88ms.
+- **Colors** — `arrowColors` holds the four lane colors (Dracula palette by default).
+
+<div align="right">
+  <a href="#top"><kbd> <br> 🡅 <br> </kbd></a>
+</div>
 
 ---
 
-## License
-
-MIT — do whatever you want with it.
+<div align="center">
+<sub>MIT license — do whatever you want with it.</sub>
+</div>
