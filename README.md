@@ -123,9 +123,42 @@ Create or edit `/etc/sddm.conf.d/theme.conf`:
 ```ini
 [Theme]
 Current=sddm-ddr-theme
+
+[General]
+DisplayServer=wayland
+
+[Wayland]
+EnableHiDPI=true
+CursorSize=36
 ```
 
-**6. Test without rebooting**
+> **HiDPI displays (2x scaling, e.g. 2880×1800):** add this line under `[General]`:
+> ```ini
+> GreeterEnvironment=QT_SCALE_FACTOR=2
+> ```
+> Without it the greeter may appear tiny. Adjust the value (e.g. `1.5`) if needed.
+
+**6. Fix the Qt6 greeter (if the theme doesn't appear)**
+
+Some distros still ship `sddm-greeter` as a Qt5 binary. This theme requires Qt6:
+```bash
+sudo ln -sf /usr/bin/sddm-greeter-qt6 /usr/bin/sddm-greeter
+```
+To survive SDDM updates, create a pacman hook at `/etc/pacman.d/hooks/sddm-greeter-qt6.hook`:
+```ini
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = sddm
+
+[Action]
+Description = Relink sddm-greeter to Qt6 binary
+When = PostTransaction
+Exec = /bin/ln -sf /usr/bin/sddm-greeter-qt6 /usr/bin/sddm-greeter
+```
+
+**7. Test without rebooting**
 ```bash
 sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/sddm-ddr-theme
 ```
