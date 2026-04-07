@@ -22,7 +22,7 @@
 
 <br>
 
-https://github.com/Timeking23/sddm-ddr-theme/releases/download/v1.0/demo.mp4
+https://github.com/user-attachments/assets/e35ab443-79a6-4489-87d6-098b7acb1605
 
 <br>
 
